@@ -17,6 +17,13 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
-Broadcast::channel('salat-time.{location}', function ($user, $location) {
-    return $user->location === $location;
+// public channel 
+Broadcast::channel('salat-time', function () {
+    return true;
 });
+
+// private channel
+Broadcast::channel('salat-time.{location}', function ($user, $location) {
+    return true;
+});
+

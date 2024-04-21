@@ -28,18 +28,23 @@ class CheckSalatTiming extends Command
     {
 
         
-        $salatTimes = config('static-salat-timing');
+        // $salatTimes = config('static-salat-timing');
 
-        foreach ($salatTimes as $location => $time) {
-            foreach ($time as $salat => $timing) {
-                $now = now()->format('H:i');
-                if ($now === $timing) {
-                    event(new SalatTime($location, [
-                        'salat' => $salat,
-                        'timing' => $timing,
-                    ]));
-                }
-            }
-        }
+        event(new SalatTime('Rabat', [
+            'salat' => 'Dohr',
+            'timing' => '13:23',
+        ]));
+
+        // foreach ($salatTimes as $location => $time) {
+        //     foreach ($time as $salat => $timing) {
+        //         $now = now()->format('H:i');
+        //         if ($now === $timing) {
+        //             event(new SalatTime($location, [
+        //                 'salat' => $salat,
+        //                 'timing' => $timing,
+        //             ]));
+        //         }
+        //     }
+        // }
     }
 }

@@ -1,0 +1,12 @@
+{
+    "debug": true,
+    "port": 6001,
+    "appManager.array.apps": [
+        {
+            "id": "salat-in-time-id",
+            "key": "salat-in-time-key",
+            "secret": "salat-in-time-secret",
+            "schema": "http"
+        }
+    ]
+}
